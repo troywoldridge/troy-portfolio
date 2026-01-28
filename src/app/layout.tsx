@@ -2,23 +2,93 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const SITE_URL = "https://troywoldridge.com";
+const SITE_NAME = "Troy Woldridge";
+const TITLE = "Troy Woldridge • Full Stack Developer";
+const DESCRIPTION =
+  "Full Stack Developer building production-grade e-commerce platforms with Next.js, PostgreSQL, Stripe, and Cloudflare.";
+
 export const metadata: Metadata = {
-  title: "Troy Woldridge • Full Stack Developer",
-  description:
-    "Full Stack Developer building production-grade e-commerce platforms with Next.js, PostgreSQL, Stripe, and Cloudflare.",
-  metadataBase: new URL("https://troywoldridge.com"),
-  openGraph: {
-    title: "Troy Woldridge • Full Stack Developer",
-    description:
-      "Full Stack Developer building production-grade e-commerce platforms with Next.js, PostgreSQL, Stripe, and Cloudflare.",
-    url: "https://troywoldridge.com",
-    siteName: "Troy Woldridge",
-    type: "website",
+  metadataBase: new URL(SITE_URL),
+
+  title: {
+    default: TITLE,
+    template: "%s • Troy Woldridge",
   },
+
+  description: DESCRIPTION,
+
+  applicationName: SITE_NAME,
+
+  authors: [{ name: "Troy Woldridge", url: SITE_URL }],
+
+  generator: "Next.js",
+
+  keywords: [
+    "Troy Woldridge",
+    "Full Stack Developer",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "PostgreSQL",
+    "Stripe",
+    "Cloudflare",
+    "E-commerce",
+    "Web Developer",
+    "Software Developer",
+    "ETL",
+    "Automation",
+  ],
+
+  alternates: {
+    canonical: SITE_URL,
+  },
+
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+  },
+
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Troy Woldridge • Full Stack Developer",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og.png"],
+  },
+
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
+
+  themeColor: "#0b1220",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
