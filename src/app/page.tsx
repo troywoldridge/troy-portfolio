@@ -128,6 +128,9 @@ export default function Page() {
               <a className="btn ghost" href="/resume-full.pdf" target="_blank" rel="noreferrer">
                 Full Resume
               </a>
+              <a className="btn ghost" href="/cover-letter.pdf" target="_blank" rel="noreferrer">
+                Cover Letter
+              </a>
             </div>
 
             <div className="heroMeta">
@@ -329,16 +332,22 @@ export default function Page() {
               </div>
 
               <div className="contactRow">
-                <span className="contactLabel">Resume</span>
-                <div className="contactValue" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <span className="contactLabel">Downloads</span>
+                <div className="contactValue contactValueLinks">
                   <a href="/resume.pdf" target="_blank" rel="noreferrer">
-                    1-page PDF
+                    Resume (1-page)
                   </a>
                   <span className="dot" aria-hidden="true">
                     •
                   </span>
                   <a href="/resume-full.pdf" target="_blank" rel="noreferrer">
-                    Full PDF
+                    Full Resume
+                  </a>
+                  <span className="dot" aria-hidden="true">
+                    •
+                  </span>
+                  <a href="/cover-letter.pdf" target="_blank" rel="noreferrer">
+                    Cover Letter
                   </a>
                 </div>
               </div>

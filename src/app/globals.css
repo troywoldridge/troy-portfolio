@@ -628,3 +628,10 @@ code {
     font-size: 34px;
   }
 }
+
+.contactValueLinks {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}

@@ -1,5 +1,5 @@
 // src/app/layout.tsx
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const SITE_URL = "https://troywoldridge.com";
@@ -46,10 +46,7 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.png", type: "image/png" },
-    ],
+    icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
     apple: [{ url: "/apple-touch-icon.png" }],
   },
 
@@ -87,7 +84,9 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+};
 
+export const viewport: Viewport = {
   themeColor: "#0b1220",
 };
 
