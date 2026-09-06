@@ -17,7 +17,23 @@ type Experience = {
   bullets: string[];
 };
 
-const PROJECTS: Project[] = [
+const DEMO_PROJECTS: Project[] = [
+  {
+    title: "Benchmark Enterprises LLC",
+    subtitle: "Premium construction company website + responsive digital experience",
+    badge: "Featured",
+    bullets: [
+      "Designed and developed a complete construction-company website from the ground up with a premium editorial visual direction.",
+      "Built responsive Home, Our Work, and Contact experiences with custom layouts, typography, navigation, and interaction states.",
+      "Created a polished project gallery designed to present construction work through strong visual storytelling rather than simple image grids.",
+      "Implemented accessible navigation, focus states, reduced-motion support, responsive behavior, and a demo-safe contact inquiry experience.",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "CSS", "Responsive Design", "Accessibility", "SEO", "Linux"],
+    links: [
+      { label: "View Demo", href: "https://benchmark.troywoldridge.com" },
+      { label: "GitHub", href: "https://github.com/troywoldridge" },
+    ],
+  },
   {
     title: "Legendary Collectibles",
     subtitle: "Production e-commerce + collectibles platform (full-stack)",
@@ -34,6 +50,32 @@ const PROJECTS: Project[] = [
       { label: "GitHub", href: "https://github.com/troywoldridge" },
     ],
   },
+  {
+    title: "Catalog + Pricing Sync Pipeline",
+    subtitle: "Automation scripts for importing, normalizing, and updating product data",
+    bullets: [
+      "Built repeatable sync scripts to ingest product/pricing data into Postgres and keep it up to date.",
+      "Normalized data for consistent querying (products, options, pricing rules, images, categories).",
+      "Added error handling and restart/resume patterns to support long-running jobs.",
+    ],
+    stack: ["Node.js", "PostgreSQL", "SQL", "ETL", "Logging/Monitoring"],
+    links: [{ label: "Contact for details", href: "#contact" }],
+  },
+  {
+    title: "Admin Tools + AI Listing Workflow",
+    subtitle: "Internal tooling to generate structured listings and improve catalog quality",
+    bullets: [
+      "Created admin UI and APIs to generate listing content using structured schemas and validation rules.",
+      "Designed guardrails for factual, marketplace-safe output and consistent formatting.",
+      "Built apply/review flow to safely publish changes to the catalog.",
+    ],
+    stack: ["Next.js", "TypeScript", "OpenAI/LLM", "PostgreSQL", "JSON Schema"],
+    links: [{ label: "Contact for details", href: "#contact" }],
+  },
+];
+
+
+const PROJECTS: Project[] = [
   {
     title: "Catalog + Pricing Sync Pipeline",
     subtitle: "Automation scripts for importing, normalizing, and updating product data",
@@ -117,7 +159,7 @@ export default function Page() {
 
             <div className="ctaRow">
               <a className="btn primary" href="#projects">
-                View Projects
+                View Demo Projects
               </a>
               <a className="btn" href="#contact">
                 Contact
@@ -191,7 +233,51 @@ export default function Page() {
       <section id="projects" className="section">
         <div className="container">
           <div className="sectionHeader">
+            <h2>Demo Projects</h2>
+            <p>Selected websites and production systems built and deployed end-to-end.</p>
+          </div>
+
+          <div className="grid">
+            {DEMO_PROJECTS.map((p) => (
+              <article key={p.title} className="card project">
+                <div className="projectTop">
+                  <div>
+                    <div className="projectTitleRow">
+                      <h3>{p.title}</h3>
+                      {p.badge ? <span className="pill">{p.badge}</span> : null}
+                    </div>
+                    <p className="projectSubtitle">{p.subtitle}</p>
+                  </div>
+                </div>
+
+                <ul className="bullets">
+                  {p.bullets.map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+
+                <TagRow tags={p.stack} />
+
+                <div className="linkRow">
+                  {p.links.map((l) => (
+                    <a
+                      key={l.href + l.label}
+                      className="link"
+                      href={l.href}
+                      target={l.href.startsWith("http") ? "_blank" : undefined}
+                      rel={l.href.startsWith("http") ? "noreferrer" : undefined}
+                    >
+                      {l.label} →
+                    </a>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="sectionHeader">
             <h2>Projects</h2>
+            <p>Systems, automation, and internal tools built to solve real operational problems.</p>
           </div>
 
           <div className="grid">
