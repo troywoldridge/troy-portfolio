@@ -4,6 +4,7 @@ import "server-only";
 type Project = {
   title: string;
   subtitle: string;
+  image?: string;
   bullets: string[];
   stack: string[];
   links: { label: string; href: string }[];
@@ -20,6 +21,7 @@ type Experience = {
 const DEMO_PROJECTS: Project[] = [
   {
     title: "Benchmark Enterprises LLC",
+    image: "/projects/benchmark-enterprises.png",
     subtitle: "Premium construction company website + responsive digital experience",
     badge: "Featured",
     bullets: [
@@ -36,6 +38,7 @@ const DEMO_PROJECTS: Project[] = [
   },
   {
     title: "Legendary Collectibles",
+    image: "/projects/legendary-collectibles.png",
     subtitle: "Production e-commerce + collectibles platform (full-stack)",
     badge: "Flagship",
     bullets: [
@@ -240,6 +243,12 @@ export default function Page() {
           <div className="grid">
             {DEMO_PROJECTS.map((p) => (
               <article key={p.title} className="card project">
+                {p.image ? (
+                  <div className="projectImage">
+                    <img src={p.image} alt={`${p.title} project preview`} />
+                  </div>
+                ) : null}
+
                 <div className="projectTop">
                   <div>
                     <div className="projectTitleRow">
