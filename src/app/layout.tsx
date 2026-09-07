@@ -104,12 +104,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span className="brandText">Troy Woldridge</span>
             </a>
 
-            <nav className="nav">
-              <a href="#projects">Projects</a>
+            <nav className="nav" aria-label="Main navigation">
+              <a href="#projects">Work</a>
               <a href="#skills">Skills</a>
               <a href="#experience">Experience</a>
               <a href="#contact" className="navCta">
-                Contact
+                Contact ↗
               </a>
             </nav>
           </div>

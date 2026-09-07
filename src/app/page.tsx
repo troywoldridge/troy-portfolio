@@ -4,6 +4,7 @@ import "server-only";
 type Project = {
   title: string;
   subtitle: string;
+  description: string;
   image?: string;
   bullets: string[];
   stack: string[];
@@ -18,87 +19,72 @@ type Experience = {
   bullets: string[];
 };
 
-const DEMO_PROJECTS: Project[] = [
+const FEATURED_PROJECTS: Project[] = [
   {
     title: "Benchmark Enterprises LLC",
     image: "/projects/benchmark-enterprises.png",
-    subtitle: "Premium construction company website + responsive digital experience",
+    subtitle: "Construction company website + digital experience",
+    description:
+      "A premium, responsive website designed to showcase construction work through strong visual storytelling and a polished customer experience.",
     badge: "Featured",
     bullets: [
-      "Designed and developed a complete construction-company website from the ground up with a premium editorial visual direction.",
-      "Built responsive Home, Our Work, and Contact experiences with custom layouts, typography, navigation, and interaction states.",
-      "Created a polished project gallery designed to present construction work through strong visual storytelling rather than simple image grids.",
-      "Implemented accessible navigation, focus states, reduced-motion support, responsive behavior, and a demo-safe contact inquiry experience.",
+      "Designed and developed the site from the ground up.",
+      "Built responsive Home, Our Work, and Contact experiences.",
+      "Created a visual project gallery focused on craftsmanship and presentation.",
+      "Implemented accessible navigation, focus states, reduced-motion support, and SEO foundations.",
     ],
-    stack: ["Next.js", "React", "TypeScript", "CSS", "Responsive Design", "Accessibility", "SEO", "Linux"],
+    stack: ["Next.js", "React", "TypeScript", "CSS", "Responsive Design", "Accessibility", "SEO"],
     links: [
-      { label: "View Demo", href: "https://benchmark.troywoldridge.com" },
+      { label: "View Live Demo", href: "https://benchmark.troywoldridge.com" },
       { label: "GitHub", href: "https://github.com/troywoldridge" },
     ],
   },
   {
     title: "Legendary Collectibles",
     image: "/projects/legendary-collectibles.png",
-    subtitle: "Production e-commerce + collectibles platform (full-stack)",
+    subtitle: "Production e-commerce + collectibles platform",
+    description:
+      "A full-stack commerce platform built around a real retail operation, including catalog management, listings, checkout, payments, administration, and operational tooling.",
     badge: "Flagship",
     bullets: [
-      "Built a database-driven product catalog, admin tools, and customer storefront with SEO-friendly pages.",
-      "Implemented checkout/payments flow with Stripe and modern order handling patterns.",
-      "Integrated Cloudflare Images for optimized, variant-based image delivery.",
-      "Built API routes and server logic for pricing, listings workflows, and operational tooling.",
+      "Built a database-driven storefront, catalog, and administrative workflows.",
+      "Implemented cart, checkout, order handling, and Stripe payment integrations.",
+      "Integrated Cloudflare for optimized image delivery and production infrastructure.",
+      "Built server-side APIs and automation for pricing, listings, and operational workflows.",
     ],
-    stack: ["Next.js", "React", "Node.js", "PostgreSQL", "Drizzle ORM", "Stripe", "Cloudflare", "Linux"],
+    stack: ["Next.js", "React", "Node.js", "PostgreSQL", "Drizzle ORM", "Stripe", "Cloudflare"],
     links: [
-      { label: "Live Site", href: "https://legendary-collectibles.com" },
+      { label: "Visit Live Site", href: "https://legendary-collectibles.com" },
       { label: "GitHub", href: "https://github.com/troywoldridge" },
     ],
   },
-  {
-    title: "Catalog + Pricing Sync Pipeline",
-    subtitle: "Automation scripts for importing, normalizing, and updating product data",
-    bullets: [
-      "Built repeatable sync scripts to ingest product/pricing data into Postgres and keep it up to date.",
-      "Normalized data for consistent querying (products, options, pricing rules, images, categories).",
-      "Added error handling and restart/resume patterns to support long-running jobs.",
-    ],
-    stack: ["Node.js", "PostgreSQL", "SQL", "ETL", "Logging/Monitoring"],
-    links: [{ label: "Contact for details", href: "#contact" }],
-  },
-  {
-    title: "Admin Tools + AI Listing Workflow",
-    subtitle: "Internal tooling to generate structured listings and improve catalog quality",
-    bullets: [
-      "Created admin UI and APIs to generate listing content using structured schemas and validation rules.",
-      "Designed guardrails for factual, marketplace-safe output and consistent formatting.",
-      "Built apply/review flow to safely publish changes to the catalog.",
-    ],
-    stack: ["Next.js", "TypeScript", "OpenAI/LLM", "PostgreSQL", "JSON Schema"],
-    links: [{ label: "Contact for details", href: "#contact" }],
-  },
 ];
-
 
 const PROJECTS: Project[] = [
   {
     title: "Catalog + Pricing Sync Pipeline",
-    subtitle: "Automation scripts for importing, normalizing, and updating product data",
+    subtitle: "Data automation + ETL",
+    description:
+      "Automation infrastructure for importing, normalizing, and maintaining large product and pricing datasets.",
     bullets: [
-      "Built repeatable sync scripts to ingest product/pricing data into Postgres and keep it up to date.",
-      "Normalized data for consistent querying (products, options, pricing rules, images, categories).",
-      "Added error handling and restart/resume patterns to support long-running jobs.",
+      "Built repeatable import and synchronization scripts.",
+      "Normalized products, options, pricing rules, images, and categories.",
+      "Added logging, error handling, and restart/resume patterns for long-running jobs.",
     ],
-    stack: ["Node.js", "PostgreSQL", "SQL", "ETL", "Logging/Monitoring"],
+    stack: ["Node.js", "PostgreSQL", "SQL", "ETL", "Automation"],
     links: [{ label: "Contact for details", href: "#contact" }],
   },
   {
     title: "Admin Tools + AI Listing Workflow",
-    subtitle: "Internal tooling to generate structured listings and improve catalog quality",
+    subtitle: "Internal tools + structured AI workflows",
+    description:
+      "Internal tooling designed to generate structured listing content while keeping review and publishing under controlled business workflows.",
     bullets: [
-      "Created admin UI and APIs to generate listing content using structured schemas and validation rules.",
-      "Designed guardrails for factual, marketplace-safe output and consistent formatting.",
-      "Built apply/review flow to safely publish changes to the catalog.",
+      "Created admin interfaces and APIs for structured listing generation.",
+      "Used validation rules and schemas to keep output consistent.",
+      "Designed review and apply workflows before changes reach the catalog.",
     ],
-    stack: ["Next.js", "TypeScript", "OpenAI/LLM", "PostgreSQL", "JSON Schema"],
+    stack: ["Next.js", "TypeScript", "LLM Integration", "PostgreSQL", "JSON Schema"],
     links: [{ label: "Contact for details", href: "#contact" }],
   },
 ];
@@ -109,217 +95,329 @@ const EXPERIENCE: Experience[] = [
     org: "Legendary Collectibles",
     dates: "2024 — Present",
     bullets: [
-      "Designed, built, and deployed a production web platform end-to-end (frontend, backend, database, ops).",
-      "Managed integrations, performance, SEO, and reliability improvements for real users.",
+      "Designed, built, deployed, and operated a production web platform across frontend, backend, database, integrations, and infrastructure.",
+      "Built systems around real retail requirements including catalog management, listings, checkout, payments, and administration.",
+      "Managed performance, SEO, deployments, data workflows, and ongoing reliability improvements.",
     ],
   },
   {
     title: "Owner / Operator",
-    org: "Benchmark Enterprises LLC (Construction)",
+    org: "Benchmark Enterprises LLC",
     dates: "10+ years",
     bullets: [
-      "Ran day-to-day operations including AR/AP, payroll, estimating, scheduling, and client management.",
-      "Maintained financial records using QuickBooks and Excel/Google Sheets; delivered projects on deadlines.",
-      "Sold the business to relocate closer to family for medical support needs.",
+      "Managed day-to-day business operations including estimating, scheduling, AR/AP, payroll, client relationships, and project delivery.",
+      "Used QuickBooks, Excel, and Google Sheets to manage financial and operational information.",
+      "Built a deep understanding of how technology can solve practical business and workflow problems.",
     ],
   },
 ];
 
-const SKILLS: { group: string; items: string[] }[] = [
-  { group: "Frontend", items: ["Next.js", "React", "TypeScript", "HTML", "CSS", "SEO"] },
-  { group: "Backend", items: ["Node.js", "REST APIs", "Auth patterns", "Server rendering", "Integrations"] },
-  { group: "Database", items: ["PostgreSQL", "SQL", "Drizzle ORM", "Schema design", "Performance-minded querying"] },
-  { group: "Cloud & Ops", items: ["Linux", "PM2", "Deployments", "Logging", "Cloudflare (Images/CDN)"] },
-  { group: "E-commerce", items: ["Stripe", "Catalog systems", "Checkout flows", "Merchant-ready product thinking"] },
-  { group: "Automation / AI", items: ["ETL pipelines", "Scripting", "LLM integration", "Schema-driven output"] },
+const SKILLS: { group: string; description: string; items: string[] }[] = [
+  {
+    group: "Frontend",
+    description: "Interfaces built for clarity, performance, and real users.",
+    items: ["Next.js", "React", "TypeScript", "HTML", "CSS", "Responsive UI", "SEO"],
+  },
+  {
+    group: "Backend",
+    description: "Server-side systems and integrations that keep applications moving.",
+    items: ["Node.js", "REST APIs", "Server Rendering", "Authentication", "Integrations"],
+  },
+  {
+    group: "Data",
+    description: "Structured data systems designed around real business requirements.",
+    items: ["PostgreSQL", "SQL", "Drizzle ORM", "Schema Design", "Data Modeling"],
+  },
+  {
+    group: "Cloud & Ops",
+    description: "Deployment and infrastructure experience beyond the code itself.",
+    items: ["Linux", "PM2", "Cloudflare", "Deployments", "Logging", "Production Ops"],
+  },
+  {
+    group: "E-commerce",
+    description: "Commerce systems built around an actual operating business.",
+    items: ["Stripe", "Catalogs", "Listings", "Cart Systems", "Checkout", "Order Workflows"],
+  },
+  {
+    group: "Automation & AI",
+    description: "Automation that reduces repetitive work and improves data quality.",
+    items: ["ETL", "Scripting", "LLM Integration", "JSON Schema", "Data Pipelines"],
+  },
 ];
 
 function TagRow({ tags }: { tags: string[] }) {
   return (
     <div className="tagRow" aria-label="Technology stack">
-      {tags.map((t) => (
-        <span key={t} className="tag">
-          {t}
+      {tags.map((tag) => (
+        <span key={tag} className="tag">
+          {tag}
         </span>
       ))}
     </div>
   );
 }
 
+function ExternalLink({
+  href,
+  children,
+  className = "",
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <a
+      className={className}
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {children}
+    </a>
+  );
+}
+
 export default function Page() {
   return (
     <>
+      {/* HERO */}
       <section className="hero">
         <div className="container heroInner">
-          <div className="heroLeft">
-            <p className="kicker">Full Stack Developer • E-commerce Systems • Automation</p>
-            <h1 className="headline">I build production-grade web apps that power catalogs, checkout, and admin workflows.</h1>
-            <p className="subhead">
-              I’ve built and deployed real systems with <strong>Next.js</strong>, <strong>PostgreSQL</strong>,{" "}
-              <strong>Stripe</strong>, and <strong>Cloudflare</strong> — focused on clean UX, strong data models, and
-              reliable operations.
+          <div className="heroContent">
+            <div className="eyebrow">
+              <span className="statusDot" />
+              Available for opportunities
+            </div>
+
+            <p className="heroKicker">
+              FULL-STACK DEVELOPER · E-COMMERCE · AUTOMATION
             </p>
 
-            <div className="ctaRow">
+            <h1 className="headline">
+              I build software that
+              <span> solves real business problems.</span>
+            </h1>
+
+            <p className="subhead">
+              I’m Troy Woldridge, a full-stack developer who builds and operates
+              production web applications, e-commerce platforms, data systems,
+              and business automation.
+            </p>
+
+            <div className="heroActions">
               <a className="btn primary" href="#projects">
-                View Demo Projects
+                Explore My Work
+                <span aria-hidden="true">↗</span>
               </a>
+
               <a className="btn" href="#contact">
-                Contact
-              </a>
-              <a className="btn ghost" href="/resume.pdf" target="_blank" rel="noreferrer">
-                Resume (1 page)
-              </a>
-              <a className="btn ghost" href="/resume-full.pdf" target="_blank" rel="noreferrer">
-                Full Resume
-              </a>
-              <a className="btn ghost" href="/cover-letter.pdf" target="_blank" rel="noreferrer">
-                Cover Letter
+                Let’s Connect
               </a>
             </div>
 
-            <div className="heroMeta">
-              <div className="metaCard">
-                <div className="metaLabel">Primary Stack</div>
-                <div className="metaValue">Next.js • Node.js • PostgreSQL</div>
-              </div>
-              <div className="metaCard">
-                <div className="metaLabel">Strengths</div>
-                <div className="metaValue">E-commerce • Integrations • Automation</div>
-              </div>
-              <div className="metaCard">
-                <div className="metaLabel">Location</div>
-                <div className="metaValue">US (Remote-ready)</div>
-              </div>
+            <div className="heroTech">
+              <span>Currently building with</span>
+              <strong>Next.js</strong>
+              <span>·</span>
+              <strong>PostgreSQL</strong>
+              <span>·</span>
+              <strong>TypeScript</strong>
             </div>
           </div>
 
-          <div className="heroRight">
-            <div className="card proof">
-              <div className="proofHeader">
-                <div className="proofTitle">What I can help with</div>
-                <div className="proofBadge">Ready now</div>
-              </div>
-              <ul className="checklist">
-                <li>Full stack features from idea → production</li>
-                <li>E-commerce checkout + Stripe integration</li>
-                <li>Database-driven product catalogs + admin tools</li>
-                <li>Shipping/cart estimation + operational endpoints</li>
-                <li>SEO + merchant-ready product feed thinking</li>
-                <li>Automation scripts + data pipelines</li>
-              </ul>
+          <div className="heroAside">
+            <div className="heroPanel">
+              <div className="panelLabel">What I bring</div>
 
-              <div className="miniLinks">
-                <a href="https://legendary-collectibles.com" target="_blank" rel="noreferrer">
-                  legendary-collectibles.com
-                </a>
-                <span className="dot" aria-hidden="true">
-                  •
-                </span>
-                <a href="https://github.com/troywoldridge" target="_blank" rel="noreferrer">
-                  github.com/troywoldridge
-                </a>
+              <div className="heroFeature">
+                <span className="featureNumber">01</span>
+                <div>
+                  <strong>Full-stack ownership</strong>
+                  <p>From interface to database, deployment, and production.</p>
+                </div>
+              </div>
+
+              <div className="heroFeature">
+                <span className="featureNumber">02</span>
+                <div>
+                  <strong>Business perspective</strong>
+                  <p>I understand the operational problems behind the software.</p>
+                </div>
+              </div>
+
+              <div className="heroFeature">
+                <span className="featureNumber">03</span>
+                <div>
+                  <strong>Real production experience</strong>
+                  <p>Built for actual customers, transactions, and workflows.</p>
+                </div>
+              </div>
+
+              <div className="panelFooter">
+                <span>Based in the U.S.</span>
+                <span>Remote-ready</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="card note">
-              <div className="noteTitle">Quick note</div>
-              <p className="noteText">
-                I’m especially strong in roles where the company needs someone who can build <strong>and</strong> operate
-                real systems (deployment, data, integrations, and reliability).
+      {/* FEATURED PROJECTS */}
+      <section id="projects" className="section featuredSection">
+        <div className="container">
+          <div className="sectionIntro">
+            <div>
+              <p className="sectionEyebrow">Selected work</p>
+              <h2>Featured Projects</h2>
+            </div>
+            <p>
+              Real websites and production systems built from the ground up.
+            </p>
+          </div>
+
+          <div className="featuredProjects">
+            {FEATURED_PROJECTS.map((project, index) => (
+              <article key={project.title} className="featuredProject">
+                <div className="featuredImageWrap">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={`${project.title} project preview`}
+                      className="featuredImage"
+                    />
+                  ) : null}
+
+                  <span className="projectIndex">
+                    0{index + 1}
+                  </span>
+                </div>
+
+                <div className="featuredContent">
+                  <div className="projectHeading">
+                    <div>
+                      <p className="projectEyebrow">{project.badge}</p>
+                      <h3>{project.title}</h3>
+                      <p className="projectSubtitle">{project.subtitle}</p>
+                    </div>
+                  </div>
+
+                  <p className="projectDescription">
+                    {project.description}
+                  </p>
+
+                  <ul className="bullets">
+                    {project.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+
+                  <TagRow tags={project.stack} />
+
+                  <div className="projectLinks">
+                    {project.links.map((link) => (
+                      <ExternalLink
+                        key={link.href + link.label}
+                        href={link.href}
+                        className="projectLink"
+                      >
+                        {link.label} <span aria-hidden="true">↗</span>
+                      </ExternalLink>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CAPABILITIES */}
+      <section className="section capabilitiesSection">
+        <div className="container">
+          <div className="sectionIntro centered">
+            <p className="sectionEyebrow">Capabilities</p>
+            <h2>What I Build</h2>
+            <p>
+              I enjoy working where software meets real-world operations,
+              especially systems that need to be reliable, maintainable, and
+              useful to a business.
+            </p>
+          </div>
+
+          <div className="capabilityGrid">
+            <div className="capabilityCard">
+              <span className="capabilityIcon">01</span>
+              <h3>E-commerce Platforms</h3>
+              <p>
+                Catalogs, listings, carts, checkout, payments, orders, and
+                merchant workflows.
+              </p>
+            </div>
+
+            <div className="capabilityCard">
+              <span className="capabilityIcon">02</span>
+              <h3>Business Applications</h3>
+              <p>
+                Admin systems, dashboards, APIs, integrations, and tools built
+                around practical business needs.
+              </p>
+            </div>
+
+            <div className="capabilityCard">
+              <span className="capabilityIcon">03</span>
+              <h3>Data & Automation</h3>
+              <p>
+                Import pipelines, synchronization, normalization, scripting,
+                and repetitive-work automation.
+              </p>
+            </div>
+
+            <div className="capabilityCard">
+              <span className="capabilityIcon">04</span>
+              <h3>Production Infrastructure</h3>
+              <p>
+                Linux environments, deployments, Cloudflare, process
+                management, monitoring, and reliability.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="projects" className="section">
+      {/* OTHER PROJECTS */}
+      <section className="section">
         <div className="container">
-          <div className="sectionHeader">
-            <h2>Demo Projects</h2>
-            <p>Selected websites and production systems built and deployed end-to-end.</p>
+          <div className="sectionIntro">
+            <div>
+              <p className="sectionEyebrow">Behind the scenes</p>
+              <h2>Systems & Automation</h2>
+            </div>
+            <p>
+              Supporting systems that make larger applications work.
+            </p>
           </div>
 
-          <div className="grid">
-            {DEMO_PROJECTS.map((p) => (
-              <article key={p.title} className="card project">
-                {p.image ? (
-                  <div className="projectImage">
-                    <img src={p.image} alt={`${p.title} project preview`} />
-                  </div>
-                ) : null}
-
-                <div className="projectTop">
-                  <div>
-                    <div className="projectTitleRow">
-                      <h3>{p.title}</h3>
-                      {p.badge ? <span className="pill">{p.badge}</span> : null}
-                    </div>
-                    <p className="projectSubtitle">{p.subtitle}</p>
-                  </div>
-                </div>
+          <div className="systemGrid">
+            {PROJECTS.map((project) => (
+              <article key={project.title} className="systemCard">
+                <div className="systemNumber">↳</div>
+                <h3>{project.title}</h3>
+                <p className="systemSubtitle">{project.subtitle}</p>
+                <p className="systemDescription">{project.description}</p>
 
                 <ul className="bullets">
-                  {p.bullets.map((b) => (
-                    <li key={b}>{b}</li>
+                  {project.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
 
-                <TagRow tags={p.stack} />
+                <TagRow tags={project.stack} />
 
-                <div className="linkRow">
-                  {p.links.map((l) => (
-                    <a
-                      key={l.href + l.label}
-                      className="link"
-                      href={l.href}
-                      target={l.href.startsWith("http") ? "_blank" : undefined}
-                      rel={l.href.startsWith("http") ? "noreferrer" : undefined}
-                    >
-                      {l.label} →
-                    </a>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="sectionHeader">
-            <h2>Projects</h2>
-            <p>Systems, automation, and internal tools built to solve real operational problems.</p>
-          </div>
-
-          <div className="grid">
-            {PROJECTS.map((p) => (
-              <article key={p.title} className="card project">
-                <div className="projectTop">
-                  <div>
-                    <div className="projectTitleRow">
-                      <h3>{p.title}</h3>
-                      {p.badge ? <span className="pill">{p.badge}</span> : null}
-                    </div>
-                    <p className="projectSubtitle">{p.subtitle}</p>
-                  </div>
-                </div>
-
-                <ul className="bullets">
-                  {p.bullets.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-
-                <TagRow tags={p.stack} />
-
-                <div className="linkRow">
-                  {p.links.map((l) => (
-                    <a
-                      key={l.href + l.label}
-                      className="link"
-                      href={l.href}
-                      target={l.href.startsWith("http") ? "_blank" : undefined}
-                      rel={l.href.startsWith("http") ? "noreferrer" : undefined}
-                    >
-                      {l.label} →
+                <div className="projectLinks">
+                  {project.links.map((link) => (
+                    <a key={link.href} href={link.href} className="projectLink">
+                      {link.label} <span aria-hidden="true">→</span>
                     </a>
                   ))}
                 </div>
@@ -329,141 +427,147 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="skills" className="section alt">
+      {/* SKILLS */}
+      <section id="skills" className="section skillsSection">
         <div className="container">
-          <div className="sectionHeader">
-            <h2>Skills</h2>
+          <div className="sectionIntro centered">
+            <p className="sectionEyebrow">Technology</p>
+            <h2>Technical Skills</h2>
+            <p>
+              A practical stack focused on building, shipping, and maintaining
+              production systems.
+            </p>
           </div>
 
           <div className="skillsGrid">
-            {SKILLS.map((g) => (
-              <div key={g.group} className="card skillCard">
-                <h3 className="skillTitle">{g.group}</h3>
-                <div className="tagRow">
-                  {g.items.map((i) => (
-                    <span key={i} className="tag">
-                      {i}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            {SKILLS.map((skill) => (
+              <article key={skill.group} className="skillCard">
+                <h3>{skill.group}</h3>
+                <p>{skill.description}</p>
+                <TagRow tags={skill.items} />
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="experience" className="section">
+      {/* EXPERIENCE */}
+      <section id="experience" className="section experienceSection">
         <div className="container">
-          <div className="sectionHeader">
-            <h2>Experience</h2>
-            <p className="muted">A mix of technical delivery and real business operations.</p>
+          <div className="sectionIntro">
+            <div>
+              <p className="sectionEyebrow">Background</p>
+              <h2>Experience</h2>
+            </div>
+            <p>
+              Technology experience backed by years of real business
+              responsibility.
+            </p>
           </div>
 
-          <div className="timeline">
-            {EXPERIENCE.map((e) => (
-              <div key={e.title + e.org} className="card timelineItem">
-                <div className="timelineTop">
-                  <div className="timelineTitle">
-                    <h3>{e.title}</h3>
-                    <p className="muted">{e.org}</p>
+          <div className="experienceList">
+            {EXPERIENCE.map((experience, index) => (
+              <article
+                key={experience.title + experience.org}
+                className="experienceItem"
+              >
+                <div className="experienceNumber">
+                  0{index + 1}
+                </div>
+
+                <div className="experienceMain">
+                  <div className="experienceHeading">
+                    <div>
+                      <h3>{experience.title}</h3>
+                      <p>{experience.org}</p>
+                    </div>
+                    <span>{experience.dates}</span>
                   </div>
-                  <div className="timelineDates">{e.dates}</div>
-                </div>
 
-                <ul className="bullets">
-                  {e.bullets.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-              </div>
+                  <ul className="bullets">
+                    {experience.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="section alt">
-        <div className="container">
-          <div className="sectionHeader">
-            <h2>Contact</h2>
-            <p className="muted">Let’s connect — I reply quickly.</p>
+      {/* RESUME CTA */}
+      <section className="resumeCta">
+        <div className="container resumeCtaInner">
+          <div>
+            <p className="sectionEyebrow">Want the details?</p>
+            <h2>Take a closer look at my experience.</h2>
+            <p>
+              Download my resume or reach out directly to talk about an
+              opportunity.
+            </p>
           </div>
 
-          <div className="contactGrid">
-            <div className="card contactCard">
-              <h3>Fastest way</h3>
-              <p className="muted">Email me and I’ll reply quickly.</p>
+          <div className="resumeActions">
+            <a className="btn primary" href="/resume.pdf" target="_blank" rel="noreferrer">
+              Resume <span aria-hidden="true">↗</span>
+            </a>
+            <a className="btn" href="/resume-full.pdf" target="_blank" rel="noreferrer">
+              Full Resume
+            </a>
+            <a className="btn" href="/cover-letter.pdf" target="_blank" rel="noreferrer">
+              Cover Letter
+            </a>
+          </div>
+        </div>
+      </section>
 
-              <div className="contactRow">
-                <span className="contactLabel">Email</span>
-                <a className="contactValue" href="mailto:troy.woldridge.1@gmail.com">
-                  troy.woldridge.1@gmail.com
-                </a>
-              </div>
+      {/* CONTACT */}
+      <section id="contact" className="section contactSection">
+        <div className="container">
+          <div className="contactPanel">
+            <div className="contactMain">
+              <p className="sectionEyebrow">Get in touch</p>
+              <h2>Let’s build something useful.</h2>
+              <p>
+                If you're looking for someone who can understand the business
+                problem, build the software, and help get it into production,
+                I’d love to hear from you.
+              </p>
 
-              <div className="contactRow">
-                <span className="contactLabel">LinkedIn</span>
-                <a
-                  className="contactValue"
-                  href="https://www.linkedin.com/in/troy-woldridge-9b7b49b1"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  linkedin.com/in/troy-woldridge-9b7b49b1
-                </a>
-              </div>
-
-              <div className="contactRow">
-                <span className="contactLabel">GitHub</span>
-                <a className="contactValue" href="https://github.com/troywoldridge" target="_blank" rel="noreferrer">
-                  github.com/troywoldridge
-                </a>
-              </div>
-
-              <div className="contactRow">
-                <span className="contactLabel">Portfolio</span>
-                <a className="contactValue" href="https://troywoldridge.com" target="_blank" rel="noreferrer">
-                  troywoldridge.com
-                </a>
-              </div>
-
-              <div className="contactRow">
-                <span className="contactLabel">Downloads</span>
-                <div className="contactValue contactValueLinks">
-                  <a href="/resume.pdf" target="_blank" rel="noreferrer">
-                    Resume (1-page)
-                  </a>
-                  <span className="dot" aria-hidden="true">
-                    •
-                  </span>
-                  <a href="/resume-full.pdf" target="_blank" rel="noreferrer">
-                    Full Resume
-                  </a>
-                  <span className="dot" aria-hidden="true">
-                    •
-                  </span>
-                  <a href="/cover-letter.pdf" target="_blank" rel="noreferrer">
-                    Cover Letter
-                  </a>
-                </div>
-              </div>
+              <a
+                className="contactEmail"
+                href="mailto:troy.woldridge.1@gmail.com"
+              >
+                troy.woldridge.1@gmail.com
+                <span aria-hidden="true">↗</span>
+              </a>
             </div>
 
-            <div className="card contactCard">
-              <h3>Quick message</h3>
+            <div className="contactLinks">
+              <ExternalLink
+                href="https://www.linkedin.com/in/troy-woldridge-9b7b49b1"
+                className="contactLink"
+              >
+                <span>LinkedIn</span>
+                <span aria-hidden="true">↗</span>
+              </ExternalLink>
 
-              <div className="copyBox" role="group" aria-label="Quick outreach message">
-                <p>
-                  Hi — I’m Troy Woldridge, a Full Stack Developer focused on e-commerce systems (Next.js, PostgreSQL,
-                  Stripe, Cloudflare). I built and deployed Legendary Collectibles end-to-end, including catalog/admin
-                  workflows and integrations. I’m interested in the [Role] at [Company] and would love to connect.
-                </p>
-              </div>
+              <ExternalLink
+                href="https://github.com/troywoldridge"
+                className="contactLink"
+              >
+                <span>GitHub</span>
+                <span aria-hidden="true">↗</span>
+              </ExternalLink>
 
-              <div className="miniLinks">
-                <a href="https://legendary-collectibles.com" target="_blank" rel="noreferrer">
-                  View Legendary Collectibles →
-                </a>
-              </div>
+              <ExternalLink
+                href="https://legendary-collectibles.com"
+                className="contactLink"
+              >
+                <span>Legendary Collectibles</span>
+                <span aria-hidden="true">↗</span>
+              </ExternalLink>
             </div>
           </div>
         </div>
